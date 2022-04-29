@@ -142,23 +142,27 @@
             }
         }
         //Colision de a con b
-        if (b.x <= a.x && b.x + b.width >= a.x + a.width){
+        else if (b.x <= a.x && b.x + b.width >= a.x + a.width){
             if(b.y <= a.y && b.y + b.height >= a.y + a.height){
                 hit = true;
             }
         }
         //Colision de b con a
-        if (a.x <= b.x && a.x + a.width >= b.x +b.width){
+        else if (a.x <= b.x && a.x + a.width >= b.x +b.width){
             if (a.y <= b.y && a.y +a.height >= b.y + b.height){
                 hit = true;
             }
         }
         //Colision con los bordes
-        if (b.x - b.width <= 0 || b.x + b.width >= 800){
+        else if (b.x - b.width){
+            if (b.x + b.width >= 800){
                 hit = true;
+            }
         }
-        if(b.y + b.height <= 0 || b.y + b.height >=400){
-            hit = true;
+        else if(b.y + b.height <= 0){
+            if (b.y + b.height >=400){
+                hit = true;
+            }   
         }
 
 
