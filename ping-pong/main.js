@@ -132,7 +132,6 @@
     }
 
     function hit(a, b){
-        console.log("hola");
         //Revisa si a colisiona con b
         var hit = false;
         //Colisiones horizontales
@@ -154,6 +153,19 @@
                 hit = true;
             }
         }
+        //Colision con los bordes
+        // console.log(`x: ${b.x} y: ${b.y} width: ${b.width}`);
+        if (b.x - b.width <= 0 || b.x + b.width >= 800){
+                hit = true;
+                console.log("pego en x");      
+        }
+        if(b.y + b.height <= 0 || b.y + b.height >=400){
+            hit = true;
+            console.log("pego en y");
+        }
+
+
+        
         return hit;
     }
 
