@@ -1,6 +1,9 @@
-(function(){
+//Pregunta 1. A que hace referencia la palabra reservada self?
+// R/ Es equivalente a la palabra reservada window, de donde se maneja la ventana del navegador.
+
+(function(){ 
     self.Board = function(width, height){
-            this.width = width;
+            this.width = width;  
             this.height = height;
             this.playing = false;
             this.game_over = false;
@@ -8,9 +11,12 @@
             this.ball = null;
             this.playing = false;
     }
+
+    //Pregunta 2: Qué hace esta línea .prototype?
+    // R/ Define un método del objeto Board, en este caso, el get elements.
     
-    self.Board.prototype = {
-        get elements(){
+    self.Board.prototype = { 
+        get elements(){    
             var elements = this.bars.map(function(bar){return bar;});
             elements.push(this.ball);
             return elements;
@@ -90,7 +96,8 @@
 })();
 
 
-
+//Pregunta 3. Que hace el metodo getContext("2d") de la linea 106?
+// R/ Devuelve el contexto de renderizado del canvas, en este caso es un contexto en dos dimensiones.
 (function(){
     self.BoardView = function(canvas, board){
         this.canvas = canvas;
@@ -194,6 +201,8 @@ var boardView = new BoardView(canvas, board);
 var ball = new Ball(350, 100, 10, board);
 
 
+//Pregunta 3. Que hace la propiedad code del evento keydown?
+// R/ Devuelve la tecla presionada. Esta propiedad reemplaza al keyCode que se utiliza en el video.
 document.addEventListener("keydown", function(ev){
     ev.preventDefault();
     if (ev.code === "ArrowUp"){
